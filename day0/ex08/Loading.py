@@ -4,11 +4,27 @@ from shutil import get_terminal_size
 
 
 def format_time(t: float) -> str:
+    """ a simple function to return time in min02:sec02 format"""
     mins, secs = divmod(int(t), 60)
     return f"{mins:02d}:{secs:02d}"
 
 
 def ft_tqdm(lst: range) -> None:
+    """A simple progress bar generator similar to tqdm.
+
+    Displays a live progress bar in the terminal while iterating over a range.
+    Shows the percentage, elapsed time, estimated remaining time, and speed.
+
+    Args:
+        lst: A range or iterable to loop through.
+
+    Yields:
+        Each item from the given iterable, one by one.
+
+    Example:
+        >>> for i in ft_tqdm(range(100)):
+            ...     time.sleep(0.05)
+    """
     total = len(lst)
     if (total == 0):
         print("0it [00:00, ?it/s]")

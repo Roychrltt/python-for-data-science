@@ -3,6 +3,7 @@ from ft_filter import ft_filter
 
 
 def main():
+    print(filter.__doc__ == ft_filter.__doc__)
     try:
         assert len(sys.argv) == 3, "the arguments are bad"
 

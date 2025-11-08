@@ -2,6 +2,7 @@ import sys
 
 
 def count(s):
+    """a function to count different characters in a string"""
     p = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     return {
             'upper': sum(1 for c in s if c.isupper()),
@@ -14,6 +15,7 @@ def count(s):
 
 
 def get_text_from_args():
+    """a function to get the text to count from arguments"""
     try:
         if len(sys.argv) == 1:
             try:
@@ -32,6 +34,7 @@ def get_text_from_args():
 
 
 def display_counts(counts):
+    """a function to display the results"""
     print(f"The text contains {counts['length']} characters:")
     print(f"{counts['upper']} upper letters")
     print(f"{counts['lower']} lower letters")

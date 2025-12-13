@@ -12,15 +12,12 @@ def ft_zoom(img_list: np.ndarray, startX: int, startY: int, lenX: int,
     return img_list[startY:startY + lenY, startX:startX + lenX, 0:1]
 
 
-def ft_rotate(imt_list: np.ndarray) -> ndarray:
+def ft_rotate(img_list: np.ndarray) -> np.ndarray:
     """Transposes a 2D array"""
     assert len(img_list.shape) == 2, "Not a 2 dimensional array."
-    newArray = np.zeros(imgArr.shape[::-1], np.int32)
+    new_img = np.rot90(img_list, k=1)
 
-    for i, line in enumerate(newArray):
-        for j in range(len(line)):
-            newArray[i][j] = imgArr[j][i]
-    return newArray
+    return new_img
 
 
 def main():
@@ -34,7 +31,10 @@ def main():
         print("New shape after slicing:", new_img_list.shape)
         print(new_img_list)
 
-        plt.imshow(new_img_list, cmap="gray")
+        new_img = ft_rotate(new_img_list.squeeze())
+        print("New shape after Transpose:", new_img.shape)
+        print(new_img)
+        plt.imshow(new_img, cmap="gray")
         plt.show()
 
     except Exception as e:

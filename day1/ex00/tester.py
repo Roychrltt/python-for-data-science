@@ -14,23 +14,23 @@ def main():
     print(apply_limit(bmi, 26))
 
     # Error handling
-    print("-------------------- Test case 1: height type error --------------------:")
+    print("\n-------------------- Test case 1: height type error --------------------:")
     give_bmi([1, 2, 8, 3.4, "a"], [1, 2, 3, 4, 5])
 
-    print("-------------------- Test case 2: weight type error --------------------:")
+    print("\n-------------------- Test case 2: weight type error --------------------:")
     give_bmi([1, 2, 8, 3.4, 5.6], ["a", 2, 3, 4, 5])
 
-    print("-------------------- Test case 3: negative or 0 --------------------:")
+    print("\n-------------------- Test case 3: negative or 0 --------------------:")
     give_bmi([1, 2, 8, 3.4, -1], [1, 2, 3, 4, 5])
     give_bmi([1, 2, 8, 3.4, 1], [0, 2, 3, 4, 5])
 
-    print("-------------------- Test case 4: lists' size not equal --------------------:")
+    print("\n-------------------- Test case 4: lists' size not equal --------------------:")
     give_bmi([1, 2, 8, 3.4, 1], [1, 2, 3, 4, 5, 8, 9])
 
-    print("-------------------- Test case 5: bmi type error --------------------:")
+    print("\n-------------------- Test case 5: bmi type error --------------------:")
     apply_limit([1, 2, 3, 1, "a"], 2)
 
-    print("-------------------- Test case 6: limit is not an integer --------------------:")
+    print("\n-------------------- Test case 6: limit is not an integer --------------------:")
     apply_limit([1, 2, 3, 1, 5], 2.3)
 
 

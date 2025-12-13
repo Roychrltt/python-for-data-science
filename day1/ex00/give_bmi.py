@@ -8,18 +8,18 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
     try:
         assert isinstance(height, list), "Input is not a list."
         assert isinstance(weight, list), "Input is not a list."
-        assert any(h <= 0 for h in height),\
-                "Heights must all be positive values"
-        assert any(w <= 0 for w in weight),\
-                "Weights must all be positive values"
-        assert all(isinstance(h, int | float) for h in height),\
-                "Heights must all be int ot float."
-        assert all(isinstance(w, int | float) for w in weight),\
-                "Weights must all be int ot float."
+        assert all(h > 0 for h in height), \
+            "Heights must all be positive values"
+        assert all(w > 0 for w in weight), \
+            "Weights must all be positive values"
+        assert all(isinstance(h, int | float) for h in height), \
+            "Heights must all be int ot float."
+        assert all(isinstance(w, int | float) for w in weight), \
+            "Weights must all be int ot float."
         assert (len(height) == len(weight)), "Two lists' size not equal."
 
-        h = np.array(height, dtype = float)
-        w = np.array(weight, dtype = float)
+        h = np.array(height, dtype=float)
+        w = np.array(weight, dtype=float)
         return (w / h ** 2).tolist()
 
     except AssertionError as e:
@@ -27,7 +27,8 @@ def give_bmi(height: list[int | float], weight: list[int | float]) \
         return None
 
     except Exception as e:
-        raise
+        print("Error:", e)
+        return None
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
@@ -36,8 +37,8 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     try:
         assert isinstance(bmi, list), "Input is not a list."
         assert isinstance(limit, int), "Limit is not an int."
-        assert all(isinstance(i, int | float) for i in bmi),\
-                "BMIs must all be int ot float."
+        assert all(isinstance(i, int | float) for i in bmi), \
+            "BMIs must all be int ot float."
         return [i > limit for i in bmi]
 
     except AssertionError as e:
@@ -45,4 +46,5 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         return None
 
     except Exception as e:
-        raise
+        print("Error:", e)
+        return None

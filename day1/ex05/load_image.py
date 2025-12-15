@@ -1,7 +1,6 @@
 from PIL import Image
 import numpy as np
 from numpy import ndarray as array
-import sys
 import matplotlib.pyplot as plt
 
 

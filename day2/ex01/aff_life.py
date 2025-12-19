@@ -1,11 +1,14 @@
 from load_csv import load
 import matplotlib.pyplot as plt
+import sys
 
 
 def main():
     """Main function to load data from file and display the life expectancy of
        France population using Matplotlib"""
     df = load("../life_expectancy_years.csv")
+    if df is None:
+        sys.exit(1)
     france = df.loc["France"]
     years = france.index.astype(int)
     plt.figure()

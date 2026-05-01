@@ -7,6 +7,8 @@ def main():
     """Main function to load data from file and display the life expectancy of
        France population using Matplotlib"""
     df = load("../life_expectancy_years.csv")
+    if df is None:
+        sys.exit(1)
     # print(sorted(df.index))
     country = "France"
 

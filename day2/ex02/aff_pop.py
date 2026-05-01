@@ -22,8 +22,10 @@ def parse_population(val):
 
 def main():
     """Main function to load data from file and display the life expectancy of
-       France population using Matplotlib"""
+       the population of France and another country using Matplotlib"""
     df = load("../population_total.csv")
+    if df is None:
+        sys.exit(1)
     campus_country = "France"
     other_country = "Belgium"
 

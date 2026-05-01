@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 from load_csv import load
 
 
@@ -18,8 +17,9 @@ def parse_value(val):
     except ValueError:
         return None
 
+
 def main():
-    income_df = load("../income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
+    income_df = load("../gdp.csv")
     life_df = load("../life_expectancy_years.csv")
 
     if income_df is None or life_df is None:
@@ -40,9 +40,10 @@ def main():
     plt.title("1900")
     plt.xlabel("Gross domestic product")
     plt.ylabel("Life Expectancy")
-    
+
     plt.tight_layout()
     plt.show()
+
 
 if __name__ == "__main__":
     main()

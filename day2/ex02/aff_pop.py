@@ -48,8 +48,8 @@ def main():
         current_color = "green" if country == "France" else "tab:blue"
         plt.plot(years[mask], values[mask], label=country, color=current_color)
 
-
     plt.ticklabel_format(style='plain', axis='y')
+
     def format_millions(x, pos):
         return f'{int(x/1e6)}M'
     plt.gca().yaxis.set_major_formatter(ticker.FuncFormatter(format_millions))
